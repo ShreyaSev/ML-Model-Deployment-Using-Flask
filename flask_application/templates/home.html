@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" type="text/css" href="static/css/home.css">
+
+</head>
+<body>
+    <div class = "header">
+    <div class = "welcome">
+        <h2>Welcome, {{username}}!</h2>
+    </div>
+    <div class = "logout">
+        <a href = "{{url_for('logout')}}">Logout</a>
+    </div>
+    </div>
+    <div>
+        <form action = "{{url_for('predict')}}" method = 'POST'>
+        <p>Enter age</p>
+          <label for = "age">Age:</label>  
+          <input type="number" id="age" name = "age" min = "1" max="110" required>
+
+          <br>
+        
+          <p>Please select your Sex</p>
+          <label for="male">
+            <input type="radio" name="sex" id="male" value = "1">
+            Male</label>
+          <label for="female">
+            <input type="radio" name="sex" id="female" value = "0">
+            Female</label>
+          
+
+          <p>Please enter chest pain type</p>
+          <label for="chest pain1">
+            <input type="radio" name = 'angina' id="chest pain1" value = "1">
+            Typical Angina</label>
+          <label for="chest pain2">
+            <input type="radio" name = 'angina' id="chest pain2" value ="2">
+            Atypical Angina</label>
+          <label for="chest pain3">
+            <input type="radio" name = 'angina' id="chest pain3" value = "3">
+            Non-anginal pain</label>
+          <label for="chest pain4">
+            <input type="radio" name = 'angina' id="chest pain4" value ="4">
+            Asymptomatic</label>
+          
+
+          <p>Please enter resting blood pressure in mm Hg on admission to the hospital</p>
+          <label for="trestbps">BP:</label>
+          <input type="number" name="trestbps" id="trestbps" min = '80' max = '140' required>
+
+          <p>Please enter serum cholesterol in mg/dl</p>
+          <label for="chol">Cholesterol:</label>
+          <input type="number" name="chol" id="chol" min = '0' max = "240" required>
+
+          <p>Is your fasting blood sugar greater than 120 mg/dl?</p>
+          <label for="blood sugar1">
+            <input type="radio" name="blood_sugar" id="bloodsugar1" value = "1">
+            Yes</label>
+          <label for="blood sugar0">
+            <input type="radio" name="blood_sugar" id="blood sugar0" value = "0">
+            No</label>
+
+          <p>Choose Resting ECG results</p>
+          <label for="restecg0">
+            <input type="radio" name = "ecg" id = "restecg0" value="0">
+            Normal</label>
+          <label for="restecg1">
+            <input type="radio" name="ecg" id="restecg1" value="1">
+            having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</label>
+          <label for="restecg2">
+            <input type="radio" name="ecg" id="restecg2" value="2">
+            showing probable or definite left ventricular hypertrophy by Estes' criteria</label>
+
+          <br>
+
+          <p>Please enter maximum heart rate achieved</p>
+
+          <label for="thalach">Thalach:</label>
+          <input type="number" name="thalach" id="thalach" min = '0' max = '300' required>
+
+          <br>
+
+          <p>Do you have exercise induced angina?</p>
+
+          <label for="exang1">
+            <input type="radio" name="exang" id="exang1" value = "1">
+            Yes</label>
+
+          <label for="exang0">
+            <input type="radio" name="exang" id="exang2" value = "0">
+            No</label>
+
+          <br>
+          <p>ST depression induced by exercise relative to rest</p>
+          <label for="oldpeak">Oldpeak:</label>
+          <input type="number" name="oldpeak" id="oldpeak" min ='0' max = '6' required>
+
+          <br>
+          <p>slope: the slope of the peak exercise ST segment</p>
+          <label for="slope1">
+            <input type="radio" name="slope" id="slope1" value="1">
+            Upsloping</label>
+          <label for="slope2">
+            <input type="radio" name="slope" id="slope3" value="2">
+            flat</label>
+          <label for="slope3">
+            <input type="radio" name="slope" id="slope3" value="3">
+            downsloping</label>
+
+          <br>
+
+          <p>number of major vessels (0-3) colored by flourosopy</p>
+          <label for="ca">enter number:</label>
+          <input type="number" name="ca" id="ca" min = "0" max = "3" required>
+
+
+          <br>
+          <p>Thalassemia</p>
+
+          <label for="thal3">
+            <input type="radio" name="thal" id="thal3" value = "3">
+            Normal</label>
+
+          <label for="thal6">
+            <input type="radio" name="thal" id="thal6" value="6">
+            Fixed Defect</label>
+
+          <label for="thal7">
+            <input type="radio" name="thal" id="thal7" value="7">
+            Reversable Defect</label>
+          <br>
+          <div class="prediction">
+          <input type="submit" value="Predict">
+          <p>{{msg}}</p>
+          </div>
+        </form>
+    </div>
+
+   
+
+</body>
+</html>

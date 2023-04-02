@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <title>Register</title>
+</head>
+
+<body>
+    <div class = 'container'>
+        <div class = "header">
+            <h2>Enter Details</h2>
+        </div>
+        <div class = 'form'>
+            <form action="{{url_for('register')}}" method = "POST">
+                <div>
+                <i class="fa fa-user" aria-hidden="true"></i>
+
+                <input type="text" name = "username" id = "username" placeholder='Username' required>
+                </div>
+        
+                <div>
+                    <i class="fa fa-lock" aria-hidden="true"></i>        
+                    <input type="password" name = 'password' id="password" placeholder = "Password" required>
+
+                </div>
+                <div>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="text" name="email" id="email" placeholder="E-mail">
+                </div>
+                <div>
+                    <input type="submit" name = 'register' id = 'register' value="Register">
+                </div>
+                <p>{{msg}}</p>
+                <a href = "{{url_for('logout')}}"> Go back to Login </a>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
